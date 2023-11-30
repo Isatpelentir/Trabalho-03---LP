@@ -1,0 +1,179 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: #f7d7cd;
+}
+
+header h1 {
+    background-color: #ff8482;
+    color:#f7e5e0; 
+    text-align: center; 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+header a {
+    text-decoration: none;
+    color:#f7e5e0 ;
+}
+
+header h1:hover {
+    background-color:#f8716f;
+    transform: scale(1.1);
+    border-radius: 5px;
+    border-width: 4px;
+    transition: 0.5s;
+}
+
+main {
+    padding: 15px; 
+    overflow: hidden; 
+}
+
+#products {
+    flex-grow: 2;
+}
+
+aside {
+    flex-basis: 30%;
+    background-color: #fd9a98;
+    padding: 10px;
+}
+
+#cart {
+    border: 1px solid #fad5c9;
+    border-radius: 5px;
+}
+#cart h2{
+    color: #f7e5e0;
+}
+#cart p{
+    color: #f7e5e0;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #ff8482;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
+
+#checkout-form{
+    overflow: hidden;
+    padding-top: 20px;
+  }
+  
+  form fieldset {
+    border: 1px solid #ff8482;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  form legend {
+    font-weight: bold;
+    color: #ff8482;
+  }
+  
+  .input {
+      margin-bottom: 10px;
+  }
+  
+  .label {
+      display: block;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff8482;
+    border-radius: 4px;
+    color: #555;
+  }
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 10px;
+    padding: 20px;
+    background-color:  #f7e5e0;;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+    button {
+      background-color: #ff8482;
+      color: #f7e5e0;
+      border: none;
+      border-radius: 4px;
+      padding: 10px;
+      cursor: pointer; /* Adiciona um cursor de ponteiro */
+    }
+    
+    /* Botão de Limpar */
+    button[type="reset"] {
+      background-color: #ff8482ff;
+    }
+    
+    /* Botão de Enviar */
+    button:hover {
+      background-color: #f0585d;
+    }
+    
+    .card input[type="number"]{
+        width: 10%;
+        padding: 8px;
+        border: 1px solid #ff8482;
+        border-radius: 4px;
+        color: #555;
+    }
+
+    button a{
+        text-decoration: none;
+        color: #f7e5e0;
+    }
+    .card {
+        width: calc(33.33% - 20px); 
+        height: 380px; 
+        margin: 10px; 
+        padding: 15px;
+        background-color: #f7d7cd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        float: left; 
+        color: #f87371;
+    }
+h1{
+    color: #ff8482;
+}
