@@ -12,8 +12,6 @@ const products = [
 // Carrinho de compras
 const cart = [];
 
-// Função para exibir produtos na página
-
 
 // Função para adicionar item ao carrinho
 function addToCart(productId) {
@@ -56,20 +54,66 @@ function calculateCartTotal() {
 }
 
 
-// Função de checkout (pode ser expandida conforme necessário)
 function checkout() {
-    alert('Checkout realizado com sucesso!');
-    // Lógica adicional para processar o checkout (enviar pedido, etc.)
-}
+    if (cart.length > 0) {
+      const cliente = {
+        nome: document.getElementById('nome').value,
+        cpf: document.getElementById('cpf').value,
+        email: document.getElementById('email').value,
+        telefone: document.getElementById('telefone').value,
+        cep: document.getElementById('cep').value,
+      };
+  
+      const isNomeValid = /^[A-Za-zÀ-ú\s]+$/.test(cliente.nome);
+      const isCpfValid = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cliente.cpf);
+      const isEmailValid = /\S+@\S+\.\S+/.test(cliente.email);
+      const isTelefoneValid = /^\d{10,11}$/.test(cliente.telefone);
+      const isCepValid = /^\d{5}-\d{3}$/.test(cliente.cep);
+  
+      if (!cliente.nome.trim() || !isNomeValid || !isCpfValid || !isEmailValid || !isTelefoneValid || !isCepValid) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        return;
+      }
+  
+      
+      const totalPrice = calculateTotal().toFixed(2);
+  
+      enviarDadosParaProfessor(cliente, cart);
+      saveTotalToLocalStorage(parseFloat(totalPrice));
+  
+      // Aguardar 5 segundos antes de redirecionar
+      setTimeout(function () {
+        window.location.href = `index.html?total=${totalPrice}&nome=${cliente.nome}&cpf=${cliente.cpf}&email=${cliente.email}&telefone=${cliente.telefone}&cep=${cliente.cep}`;
+      }, 5000); 
+    } else {
+      alert('Adicione produtos ao carrinho antes de finalizar a compra.');
+        document.getElementById("checkout-form").submit("http://jkorpela.fi/cgi-bin/echo.cgi");
+    }
+  }
 
-// Inicialização
-displayProducts();
 
 function openCheckoutForm() {
     window.open('checkout.html', '_blank');
 }
 
 function submitForm(event) {
-    event.preventDefault(); // Evita que o formulário seja enviado da maneira tradicional
-    alert('Formulário enviado com sucesso!'); // Aqui, você pode adicionar lógica para processar o formulário
+    event.preventDefault(); 
+    alert('Formulário enviado com sucesso!'); 
 } 
+
+function saveTotalToLocalStorage(total) {
+    const salesHistory = JSON.parse(localStorage.getItem('salesHistory')) || [];
+    salesHistory.push(total);
+    localStorage.setItem('salesHistory', JSON.stringify(salesHistory));
+  }
+  
+  function calculateTotalSales() {
+    const salesHistory = JSON.parse(localStorage.getItem('salesHistory')) || [];
+    const totalSales = salesHistory.reduce((sum, value) => sum + value, 0);
+    alert(`O total das vendas é: R$ ${totalSales.toFixed(2)}`);
+  }
+  
+  function getTotal() {
+    return renderCart();
+  }
+  

@@ -8,10 +8,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/heart.png">
 </head>
 <body>
+    
     <header>
         <h1><a href="checkout.html">Finalizar Compra</a> </h1>
     </header>
-    <form id="checkout-form" onsubmit="submitForm(event)">
+
+    <form id="checkout-form" method="post" action="http://jkorpela.fi/cgi-bin/echo.cgi" > 
         <fieldset>
             <legend>Cadastro do Cliente</legend>
         <label for="nome">Nome do Cliente:</label>

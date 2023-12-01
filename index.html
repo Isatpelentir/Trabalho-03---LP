@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livraria Online</title>
+    <title>Livraria Do Amor</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/heart.png">
 </head>
 <body>
     <header>
-        <h1><a href="index.html"> Livraria Online</a></h1>
+        <h1><a href="index.html"> Livraria Do Amor </a></h1>
     </header>
 
     <main>
@@ -27,13 +27,13 @@
 
         <section class="product">
             <div class="card">
-            <div class="product"><center>
+            <div class="product">
                 <img src="img/beijoss.jpg" alt="Livro de romance">
                 <h2>Mil Beijos de Garoto</h2>
                 <p>Autora: Tillie Cole</p>
                 <p>Preço: R$ 32,99</p>
                 <button onclick="addToCart(2)">Adicionar ao Carrinho</button>
-            </div></center>
+            </div>
             </div>
         </section>
 
@@ -55,12 +55,12 @@
                 <!-- Itens do carrinho serão adicionados dinamicamente aqui usando JavaScript -->
             </ul>
             <p>Total: R$ <span id="cart-total">0.00</span></p>
-            <button onclick="openCheckoutForm()">Finalizar Compra</button>
+            <button id="checkout" onclick="openCheckoutForm()">Finalizar Compra</button>
         </aside>
     </main>
 
     <footer>
-        <p>&copy; 2023 Livraria Online | Criado por Isabele Tomazoni e Frederico Fantin</p>
+        <p>&copy; 2023 Livraria Do Amor | Criado por Isabele Tomazoni e Frederico Fantin</p>
     </footer>
 
     <script src="script.js"></script>
