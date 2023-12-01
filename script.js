@@ -48,11 +48,13 @@ function displayCartItems() {
     });
 }
 
+
 // Função para calcular o total do carrinho
 function calculateCartTotal() {
     const total = cart.reduce((acc, item) => acc + item.price, 0);
     cartTotalSpan.textContent = total.toFixed(2);
 }
+
 
 // Função de checkout (pode ser expandida conforme necessário)
 function checkout() {
@@ -70,4 +72,4 @@ function openCheckoutForm() {
 function submitForm(event) {
     event.preventDefault(); // Evita que o formulário seja enviado da maneira tradicional
     alert('Formulário enviado com sucesso!'); // Aqui, você pode adicionar lógica para processar o formulário
-}
+} 
